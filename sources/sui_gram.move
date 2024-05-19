@@ -6,7 +6,7 @@ use sui::tx_context::{Self, TxContext};
 use sui::transfer;
 use sui::address;
 
-public struct Meme has key, store, drop {
+public struct Meme has key, store {
     id: UID,
     link: string::String,
     owner_name: string::String
