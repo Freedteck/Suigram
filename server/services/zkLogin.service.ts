@@ -69,10 +69,7 @@ export async function initializeZkLogin(provider: OpenIdProvider) {
         client_id: config.CLIENT_ID_GOOGLE,
 
     }
-    let loginUrl: string;
-
-    const urlParams = new URLSearchParams(JSON.stringify(urlBaseParams));
-    loginUrl = `https://accounts.google.com/o/oauth2/v2/auth?${urlParams.toString()}`
+    let loginUrl: string = `https://accounts.google.com/o/oauth2/v2/auth?response_type=${urlBaseParams.response_type}&nonce=${urlBaseParams.nonce}&redirect_uri=${urlBaseParams.redirect_uri}&scope=${urlBaseParams.scope}&client_id=${urlBaseParams.client_id}` 
 
     return {      
         ...setupData,
